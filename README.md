@@ -1,4 +1,4 @@
-# az-203
+# dp-203
 - Design and implement data storage (40-45%)
 - Design and develop data processing (25-30%)
 - Design and implement data security (10-15%)
