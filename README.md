@@ -1,4 +1,4 @@
-# az-203
+# dp-203
 - Design and implement data storage (40-45%)
 - Design and develop data processing (25-30%)
 - Design and implement data security (10-15%)
@@ -113,7 +113,8 @@ Manage batches and pipelines
 -  schedule data pipelines in Data Factory/Synapse Pipelines
 -  implement version control for pipeline artifacts
 -  manage Spark jobs in a pipeline
-Design and Implement Data Security (10-15%)
+
+# Design and Implement Data Security (10-15%)
 Design security for data policies and standards
 -  design data encryption for data at rest and in transit
 -  design a data auditing strategy
@@ -124,7 +125,7 @@ Design security for data policies and standards
 -  design Azure role-based access control (Azure RBAC) and POSIX-like Access Control List
 (ACL) for Data Lake Storage Gen2
 -  design row-level and column-level security
-Implement data security
+## Implement data security
 -  implement data masking
 -  encrypt data at rest and in motion
 -  implement row-level and column-level security
@@ -138,8 +139,9 @@ Implement data security
 -  load a DataFrame with sensitive information
 -  write encrypted data to tables or Parquet files
 -  manage sensitive information
-Monitor and Optimize Data Storage and Data Processing (10-15%)
-Monitor data storage and data processing
+
+# Monitor and Optimize Data Storage and Data Processing (10-15%)
+## Monitor data storage and data processing
 -  implement logging used by Azure Monitor
 -  configure monitoring services
 -  measure performance of data movement
@@ -151,7 +153,7 @@ Monitor data storage and data processing
 -  schedule and monitor pipeline tests
 -  interpret Azure Monitor metrics and logs
 -  interpret a Spark directed acyclic graph (DAG)
-Optimize and troubleshoot data storage and data processing
+## Optimize and troubleshoot data storage and data processing
 -  compact small files
 -  rewrite user-defined functions (UDFs)
 -  handle skew in data
