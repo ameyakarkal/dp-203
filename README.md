@@ -8,7 +8,7 @@
 https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4MbYT
 
 
-Design and Implement Data Storage (40-45%)
+# Design and Implement Data Storage (40-45%)
 Design a data storage structure
 -  design an Azure Data Lake solution
 -  recommend file types for storage
@@ -51,7 +51,7 @@ Implement the serving layer
 -  deliver data in Parquet files
 -  maintain metadata
 -  implement a dimensional hierarchy
-Design and Develop Data Processing (25-30%)
+# Design and Develop Data Processing (25-30%)
 Ingest and transform data
 -  transform data by using Apache Spark
 -  transform data by using Transact-SQL
