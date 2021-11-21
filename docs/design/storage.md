@@ -21,7 +21,6 @@ Reference : https://www.youtube.com/playlist?list=PL-oeM7CaGtVjRgNJ5oy9xbrpcOYr3
         - raw       : json, csv
         - silver    : json, csv
         - gold      : parquet, delta-lake
-        - 
 
 ## recommend file types for storage
 - relational
@@ -49,8 +48,15 @@ Reference : https://www.youtube.com/playlist?list=PL-oeM7CaGtVjRgNJ5oy9xbrpcOYr3
 
 
 - [ ] recommend file types for analytical queries
+    - raw : JSON / csv
+    - non raw : parquet / databricks delta lake format
 - [ ] design for efficient querying
 - [ ] design for data pruning
-- [ ] design a folder structure that represents the levels of data transformation
+- [x] design a folder structure that represents the levels of data transformation
+    - raw
+    - cleaned
+    - lab
+    - curated
+    - sensitive
 - [ ] design a distribution strategy
 - [ ] design a data archiving solution
