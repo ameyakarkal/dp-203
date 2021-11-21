@@ -9,8 +9,9 @@ https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4MbYT
 
 
 # Design and Implement Data Storage (40-45%)
-Design a data storage structure
--  design an Azure Data Lake solution
+
+[Design a data storage structure](docs/design/storage.md)
+- [ ] design an Azure Data Lake solution
 -  recommend file types for storage
 -  recommend file types for analytical queries
 -  design for efficient querying
@@ -18,12 +19,14 @@ Design a data storage structure
 -  design a folder structure that represents the levels of data transformation
 -  design a distribution strategy
 -  design a data archiving solution
+
 Design a partition strategy
 -  design a partition strategy for files
 -  design a partition strategy for analytical workloads
 -  design a partition strategy for efficiency/performance
 -  design a partition strategy for Azure Synapse Analytics
 -  identify when partitioning is needed in Azure Data Lake Storage Gen2
+
 Design the serving layer
 -  design star schemas
 -  design slowly changing dimensions
@@ -32,6 +35,7 @@ Design the serving layer
 -  design for incremental loading
 -  design analytical stores
 -  design metastores in Azure Synapse Analytics and Azure Databricks
+
 Implement physical data storage structures
 -  implement compression
 -  implement partitioning
@@ -40,17 +44,20 @@ Implement physical data storage structures
 -  implement data redundancy
 -  implement distributions
 -  implement data archiving
+
 Implement logical data structures
 -  build a temporal data solution
 -  build a slowly changing dimension
 -  build a logical folder structure
 -  build external tables
 -  implement file and folder structures for efficient querying and data pruning
+
 Implement the serving layer
 -  deliver data in a relational star schema
 -  deliver data in Parquet files
 -  maintain metadata
 -  implement a dimensional hierarchy
+
 # Design and Develop Data Processing (25-30%)
 Ingest and transform data
 -  transform data by using Apache Spark
@@ -66,8 +73,10 @@ Ingest and transform data
 -  normalize and denormalize values
 -  transform data by using Scala
 -  perform data exploratory analysis
+
 Design and develop a batch processing solution
 -  develop batch processing solutions by using Data Factory, Data Lake, Spark, Azure
+
 Synapse Pipelines, PolyBase, and Azure Databricks
 -  create data pipelines
 -  design and implement incremental data loads
@@ -86,8 +95,10 @@ Synapse Pipelines, PolyBase, and Azure Databricks
 -  configure batch retention
 -  design a batch processing solution
 -  debug Spark jobs by using the Spark UI
+
 Design and develop a stream processing solution
 -  develop a stream processing solution by using Stream Analytics, Azure Databricks, and
+
 Azure Event Hubs
 -  process data by using Spark structured streaming
 -  monitor for performance and functional regressions
@@ -105,6 +116,7 @@ Azure Event Hubs
 -  upsert data
 -  replay archived stream data
 -  design a stream processing solution
+
 Manage batches and pipelines
 -  trigger batches
 -  handle failed batch loads
