@@ -1,5 +1,7 @@
 # Design a data storage structure
 Reference : https://www.youtube.com/playlist?list=PL-oeM7CaGtVjRgNJ5oy9xbrpcOYr3RhZG
+Reference : https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-best-practices
+
 
 ##  design an Azure Data Lake solution
 - [x] performance : tier : hot | cold | archive
