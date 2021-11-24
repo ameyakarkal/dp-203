@@ -1,6 +1,6 @@
 # Azure Synapse
 Reference : [Implement Datalakehouse with Azure Synapse](https://app.pluralsight.com/library/courses/building-first-data-lakehouse-azure-synapse-analytics/table-of-contents)
-
+Reference : [Implement Security on Azure Synapse](https://app.pluralsight.com/library/courses/implement-security-azure-synapse/table-of-contents)
 ## Concept
 - 2015 Azure Sql Datawarehouse
 - 2019 Azure Synapse Analytics
@@ -23,14 +23,15 @@ Reference : [Implement Datalakehouse with Azure Synapse](https://app.pluralsight
 - Connected Service
     - CosmosDB
     - Power BI
-
-
+- Encryption
+    - At Rest
+    - In Transit
 ## Storage
 - Azure Datalake Gen2 storage account
 - can be connected to multiple storage accounts
 - support for DELTA LAKE and Common Data Model
 ## Compute
-- SQL Pool
+- SQL Dedicated Pool
     - Dedicated SQL pools : based on SQL MPP
     - pay for the compute even if it is not used
     - define model in T-SQL
@@ -70,6 +71,7 @@ Reference : [Implement Datalakehouse with Azure Synapse](https://app.pluralsight
     - work is balanced between compute nodes. reduces the amount of work done by each compute node
 - data movement service: coordinates movement of data between compute node
 - polybase based querying on external data sources
+    - COMPONENTS : CREDENTIALS | DATASOURCE | FILE FORMAT | SCHEMA
     - database scoped credential
     - data source that defines the location of the external datasource
     - file format entity that defined file format
@@ -86,3 +88,30 @@ Reference : [Implement Datalakehouse with Azure Synapse](https://app.pluralsight
 - use 
     - external tables : datasource, datasource scoped credential, file format, schema
     - openrowset
+
+
+# Security
+## Encryption
+- at rest : uses TDE (Transparent Data Encryption) using Encryption key
+    - raw data and logs are encrypted
+    - PCI compliant
+    - Keys
+        - managed key
+        - customer managed key
+        - TDE proctector : managed key can be used to encrypt the Transparent Data Encryption key
+- in transit : TLS : transport layer security
+- using azure key vault with azure synapse
+## Data Masking
+- types : how a masked data column is showed
+    - default : XXX
+    - random : XX233XX
+    - email : mask email address
+    - custom : user defined
+## Row and Column level security
+- row level security using predicte
+    - create separate schema 
+    - create predicate table valued function
+    - create security policy : assigns tvf to a table
+    - grant select access on tvf for the user
+- column level security : grant access to the user
+    - user gets error when projecting columns that don't fall in the grant scope
