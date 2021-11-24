@@ -1,7 +1,8 @@
 # Design a data storage structure
 Reference : https://www.youtube.com/playlist?list=PL-oeM7CaGtVjRgNJ5oy9xbrpcOYr3RhZG
-
+Reference : https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-best-practices
 ##  design an Azure Data Lake solution
+
 - [x] performance : tier : hot | cold | archive
 - [x] replication 
     - LRS : three copies are created in ONE region under ONE zone (data center)
@@ -22,35 +23,39 @@ Reference : https://www.youtube.com/playlist?list=PL-oeM7CaGtVjRgNJ5oy9xbrpcOYr3
         - silver    : json, csv
         - gold      : parquet, delta-lake
 
-## recommend file types for storage
-- relational
-    - azure sql db
-    - postgres
-    - mysql
-    - mariaDB
-- columnar
-    - azure analysis
-    - power bi
-    - azure sql columnar index
-    - cosmosdb casandra api
-- graph
-    - cosmosdb gremlin api
-    - azure sql db graph tables
-- key value
-    - storage table
-    - redis cache 
-    - cosmosDB
-- object
-    - azure storage account blob
-    - adls gen1 | adls gen2
-- time series
-    - azure data explorer | time series insights
+- [x] recommend file types for storage
+    - relational
+        - azure sql db
+        - postgres
+        - mysql
+        - mariaDB
+    - columnar
+        - azure analysis
+        - power bi
+        - azure sql columnar index
+        - cosmosdb casandra api
+    - graph
+        - cosmosdb gremlin api
+        - azure sql db graph tables
+    - key value
+        - storage table
+        - redis cache 
+        - cosmosDB
+    - object
+        - azure storage account blob
+        - adls gen1 | adls gen2
+    - time series
+        - azure data explorer | time series insights
 
-
-- [ ] recommend file types for analytical queries
+- [x] recommend file types for analytical queries
     - raw : JSON / csv
     - non raw : parquet / databricks delta lake format
-- [ ] design for efficient querying
+## [ ] design for efficient querying
+Reference : https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-query-acceleration
+ - query acceleration, application can provide filter predicates and projection predicates
+ - processors filter and stream out only the data that match the predicate, reducing transfer of unwanted data
+ 
+
 - [ ] design for data pruning
 - [x] design a folder structure that represents the levels of data transformation
     - raw
