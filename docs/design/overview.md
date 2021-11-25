@@ -1,7 +1,7 @@
-# Design a data storage structure
+# 1. Design a data storage structure
 Reference : https://www.youtube.com/playlist?list=PL-oeM7CaGtVjRgNJ5oy9xbrpcOYr3RhZG
 Reference : https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-best-practices
-## - [x] design an Azure Data Lake solution
+## 1.1 design an Azure Data Lake solution
 
 - [x] performance : tier : hot | cold | archive
 - [x] replication 
@@ -23,7 +23,7 @@ Reference : https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-stora
         - silver    : json, csv
         - gold      : parquet, delta-lake
 
-## - [x] recommend file types for storage
+## 1.2 recommend file types for storage
     - relational
         - azure sql db
         - postgres
@@ -47,15 +47,15 @@ Reference : https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-stora
     - time series
         - azure data explorer | time series insights
 
-## - [x] recommend file types for analytical queries
+## 1.3 recommend file types for analytical queries
     - raw : JSON / csv
     - non raw : parquet / databricks delta lake format
-## [ ] design for efficient querying
+## 1.4 design for efficient querying
 Reference : https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-query-acceleration
  - query acceleration, application can provide filter predicates and projection predicates
  - processors filter and stream out only the data that match the predicate, reducing transfer of unwanted data
  
-## - [x] design for data pruning
+## 1.5 design for data pruning
 - storage account gen2 : life cycle management
 - azure sql edge : define data_retention_policy on database and table
 ```sql
@@ -70,14 +70,14 @@ WITH (
     DATA_RETENTION = ON (FILTER_COLUMN = CreatedOn, RETENTION_PERIOD =1 DAY)
 )
 ```
-## - [x] design a folder structure that represents the levels of data transformation
+## 1.6 design a folder structure that represents the levels of data transformation
     - raw
     - cleaned
     - lab
     - curated
     - sensitive
 
-## - [ ] design a distribution strategy
+## 1.7 design a distribution strategy
 
 
-## - [ ] design a data archiving solution
+## 1.8 design a data archiving solution
