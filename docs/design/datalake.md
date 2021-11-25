@@ -1,7 +1,9 @@
 
 ## Auditing | Encryption
 
-[Implement Data Auditing with Azure Data Lake](https://app.pluralsight.com/library/courses/implement-data-auditing-azure-data-lake/table-of-contents)
+References : 
+- [Implement Data Auditing with Azure Data Lake](https://app.pluralsight.com/library/courses/implement-data-auditing-azure-data-lake/table-of-contents)
+
 - Azure SQL DB 
     - Dynamic Data Masking.
     - setup masking per column of table
@@ -51,6 +53,8 @@
 - Transparent Data Encrpytion Tab
     - key managed by azure
     - key managed by user
+
+
 
 ## Secure Endpoint Security
 - service endpoint allow access azure services 
