@@ -78,6 +78,29 @@ WITH (
     - sensitive
 
 ## 1.7 design a distribution strategy
-
-
+- Reference : [Design Principles for Partitioning with Azure](https://app.pluralsight.com/library/courses/design-principles-partitioning-azure/table-of-contents)
+- Partitioning
+    - Key Concepts
+        - performance
+        - scalability : needs to support 
+        - availability
+    - Horizontal Paritioning | Sharding
+        - each partition has same schema
+        - define a partitioning key. (e.g : tenantId)
+        - rows are partitioned
+    - Vertical Partitioning
+        - different schema
+        - bring columns with similar concerns like GDPR, sensitivity level, authentication together, slowly changing properties
+    - Functional Partitioning 
+        - microservices | bounded context define a partition
+        - partitioning for performance (archive vs current)
+- Choosing good partitioning key (horizontal partitioning)
+    - key should have ~high cardinality
+    - key should be static (avoid shuffling of data after creation)
+    - key should distribute frequency evenly. NOT create UNEVEN Shards
+    - key should distribute load evenly. NOT create HOT partitions
+- Use Cases
+    - Auditing and masking of PII data : vertical
+    - Improve write complexity of queries : bounded context : functional
+    - Disaster recovery : horizontal : horizontal
 ## 1.8 design a data archiving solution
