@@ -104,3 +104,18 @@ WITH (
     - Improve write complexity of queries : bounded context : functional
     - Disaster recovery : horizontal : horizontal
 ## 1.8 design a data archiving solution
+- Reference
+    - [Blob life cycle management](https://docs.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview)
+    - [archieve rehydrate overview](https://docs.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview)
+
+- Rehydrate 
+    - you can set priority
+        - standard : upto 15 hours
+        - high : < 1hr for < 10gb
+        - can upgrade priority while rehydration is pending
+    - `SetBlobTier`
+        - use when life cycle policies are not defined
+        - does not alter lastModified date
+    - copy blob to higher tier
+        - new blob is listed immediately however will not contain data
+        - if source blob is deleted
