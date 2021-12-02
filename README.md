@@ -11,21 +11,21 @@ https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4MbYT
 # Design and Implement Data Storage (40-45%)
 
 [Design a data storage structure](docs/design/storage.md)
-- [ ] design an Azure Data Lake solution
--  recommend file types for storage
--  recommend file types for analytical queries
--  design for efficient querying
--  design for data pruning
--  design a folder structure that represents the levels of data transformation
--  design a distribution strategy
--  design a data archiving solution
+- [x] design an Azure Data Lake solution
+- [x] recommend file types for storage
+- [x] recommend file types for analytical queries
+- [x] design for efficient querying
+- [x] design for data pruning
+- [x] design a folder structure that represents the levels of data transformation
+- [x] design a distribution strategy
+- [x] design a data archiving solution
 
 Design a partition strategy
--  design a partition strategy for files
--  design a partition strategy for analytical workloads
--  design a partition strategy for efficiency/performance
--  design a partition strategy for Azure Synapse Analytics
--  identify when partitioning is needed in Azure Data Lake Storage Gen2
+- [ ] design a partition strategy for files
+- [ ] design a partition strategy for analytical workloads
+- [ ] design a partition strategy for efficiency/performance
+- [ ] design a partition strategy for Azure Synapse Analytics
+- [ ] identify when partitioning is needed in Azure Data Lake Storage Gen2
 
 Design the serving layer
 -  design star schemas
@@ -126,31 +126,31 @@ Manage batches and pipelines
 -  implement version control for pipeline artifacts
 -  manage Spark jobs in a pipeline
 
-# Design and Implement Data Security (10-15%)
-Design security for data policies and standards
--  design data encryption for data at rest and in transit
--  design a data auditing strategy
--  design a data masking strategy
--  design for data privacy
--  design a data retention policy
--  design to purge data based on business requirements
--  design Azure role-based access control (Azure RBAC) and POSIX-like Access Control List
-(ACL) for Data Lake Storage Gen2
--  design row-level and column-level security
+# Design and Implement Data Security 🔐 (10-15%)
+
+## Design security for data policies and standards
+- [x] [design data encryption for data at rest and in transit 🔐](docs/security/overview.md/#data-encryption)
+- [x] [design a data auditing strategy 📒](docs/security/overview.md/#data-audit)
+- [x] [design a data masking strategy 😷](docs/security/overview.md/#data-masking)
+- [x] design for data privacy
+- [x] [design a data retention policy 💾](docs/security/overview.md/#data-retention)
+- [x] [design to purge data based on business requirements](docs/security/overview.md/#data-purge)
+- [x] [design Azure role-based access control (Azure RBAC) and POSIX-like Access - [x]ntrol List (ACL) for Data Lake Storage Gen2](docs/security/overview.md/#rbac-acl)
+- [x] [design row-level and column-level security 🔒](docs/security/overview.md/#row-column-security)
 ## Implement data security
--  implement data masking
--  encrypt data at rest and in motion
--  implement row-level and column-level security
--  implement Azure RBAC
--  implement POSIX-like ACLs for Data Lake Storage Gen2
--  implement a data retention policy
--  implement a data auditing strategy
--  manage identities, keys, and secrets across different data platform technologies
--  implement secure endpoints (private and public)
--  implement resource tokens in Azure Databricks
--  load a DataFrame with sensitive information
--  write encrypted data to tables or Parquet files
--  manage sensitive information
+- [x]  implement data masking
+- [x]  encrypt data at rest and in motion
+- [x]  implement row-level and column-level security
+- [x]  implement Azure RBAC
+- [x]  implement POSIX-like ACLs for Data Lake Storage Gen2
+- [x]  implement a data retention policy
+- [x]  implement a data auditing strategy
+- [ ]  manage identities, keys, and secrets across different data platform technologies
+- [ ]  implement secure endpoints (private and public)
+- [ ]  implement resource tokens in Azure Databricks
+- [ ]  load a DataFrame with sensitive information
+- [ ]  write encrypted data to tables or Parquet files
+- [ ]  manage sensitive information
 
 # Monitor and Optimize Data Storage and Data Processing (10-15%)
 ## Monitor data storage and data processing
