@@ -21,11 +21,11 @@ https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4MbYT
 - [x] design a data archiving solution
 
 Design a partition strategy
-- [x] design a partition strategy for files
-- [x] design a partition strategy for analytical workloads
-- [x] design a partition strategy for efficiency/performance
-- [x] design a partition strategy for Azure Synapse Analytics
-- [x] identify when partitioning is needed in Azure Data Lake Storage Gen2
+- [ ] design a partition strategy for files
+- [ ] design a partition strategy for analytical workloads
+- [ ] design a partition strategy for efficiency/performance
+- [ ] design a partition strategy for Azure Synapse Analytics
+- [ ] identify when partitioning is needed in Azure Data Lake Storage Gen2
 
 Design the serving layer
 -  design star schemas
@@ -128,7 +128,7 @@ Manage batches and pipelines
 
 # Design and Implement Data Security (10-15%)
 Design security for data policies and standards
-- [x] design data encryption for data at rest and in transit
+- [x] [design data encryption for data at rest and in transit](security.md/#encryption) ✅
 - [x] design a data auditing strategy
 - [x] design a data masking strategy
 - [x] design for data privacy

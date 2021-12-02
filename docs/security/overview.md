@@ -2,7 +2,10 @@
 Reference : 
 - [Implement Data Auditing Azure Data lake](https://app.pluralsight.com/library/courses/implement-data-auditing-azure-data-lake/table-of-contents)
 
-## design data encryption for data at rest and in transit
+
+## design
+
+## [design data encryption for data at rest and in transit](#encryption)
 - encryption 
     - at rest
     - in transit
@@ -24,15 +27,18 @@ Reference :
     - seamless integration
 
 ## design a data auditing strategy
+- Reference [Azure Sql - Database - Auditing](https://docs.microsoft.com/en-us/azure/azure-sql/database/auditing-overview)
 - azure sql db
     - implement: auditing logs to go storage account | log analytics workspace
     - audit policy : three groups of audit logs
         - BATCH_COMPLETED_GROUP
         - FAILED_DATABASE_AUTHENTICATION_GROUP
         - SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP
+- azure synapse
+- azure storage
 
 ## design a data masking strategy
-- azure sql db
+- azure sql db | azure sql pool
 ```sql
 CREATE TABLE Data.Membership(
     MemberID        int IDENTITY(1,1) NOT NULL PRIMARY KEY CLUSTERED,
