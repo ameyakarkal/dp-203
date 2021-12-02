@@ -128,14 +128,14 @@ Manage batches and pipelines
 
 # Design and Implement Data Security (10-15%)
 Design security for data policies and standards
-- [x] [design data encryption for data at rest and in transit](security.md/#encryption) ✅
-- [x] design a data auditing strategy
-- [x] design a data masking strategy
+- [x] [design data encryption for data at rest and in transit 🔐](docs/security/overview.md/#data-encryption)
+- [x] [design a data auditing strategy 📒](docs/security/overview.md/#data-audit)
+- [x] [design a data masking strategy 😷](docs/security/overview.md/#data-masking)
 - [x] design for data privacy
-- [x] design a data retention policy
-- [x] design to purge data based on business requirements
-- [x] design Azure role-based access control (Azure RBAC) and POSIX-like Access - [x]ntrol List (ACL) for Data Lake Storage Gen2
-- [x] design row-level and column-level security
+- [x] [design a data retention policy 💾](docs/security/overview.md/#data-retention)
+- [x] [design to purge data based on business requirements](docs/security/overview.md/#data-purge)
+- [x] [design Azure role-based access control (Azure RBAC) and POSIX-like Access - [x]ntrol List (ACL) for Data Lake Storage Gen2](docs/security/overview.md/#rbac-acl)
+- [x] [design row-level and column-level security 🔒](docs/security/overview.md/#row-column-security)
 ## Implement data security
 - [x]  implement data masking
 - [x]  encrypt data at rest and in motion

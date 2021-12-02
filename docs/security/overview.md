@@ -5,8 +5,14 @@ Reference :
 
 ## design
 
-## [design data encryption for data at rest and in transit](#encryption)
-- encryption 
+## [design data encryption for data at rest and in transit 🔐](#data-encryption)
+Reference : [Azuure Encryption At Rest](https://docs.microsoft.com/en-us/azure/security/fundamentals/encryption-atrest)
+
+Keywords : 
+    - Transparent Data Encryption
+    - Azure Disk Encryption
+    - Keys encryption key
+- encryption
     - at rest
     - in transit
 - storage account
@@ -26,7 +32,7 @@ Reference :
     - managed identities for azure services 
     - seamless integration
 
-## design a data auditing strategy
+## [design a data auditing strategy 📒](#data-audit)
 - Reference [Azure Sql - Database - Auditing](https://docs.microsoft.com/en-us/azure/azure-sql/database/auditing-overview)
 - azure sql db
     - implement: auditing logs to go storage account | log analytics workspace
@@ -35,9 +41,11 @@ Reference :
         - FAILED_DATABASE_AUTHENTICATION_GROUP
         - SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP
 - azure synapse
-- azure storage
+- azure storage (similar to az-204 storage auditing)
+    - implement : auditing logs -> storage account -> azure log analytics workspace -> azure monitoring
 
-## design a data masking strategy
+## [design a data masking strategy 😷](#data-masking)
+- using TSQL / Azure Portal -> SQL DB -> Data Masking tab in Blade
 - azure sql db | azure sql pool
 ```sql
 CREATE TABLE Data.Membership(
@@ -56,7 +64,18 @@ CREATE TABLE Data.Membership(
 - private
 - confidential
 
-## design a data retention policy- storage account gen2 : life cycle management
+## [design a data retention policy 💾](#data-retention)
+- Reference
+    - [azure sql backup](https://docs.microsoft.com/en-us/azure/azure-sql/database/long-term-backup-retention-configure)
+
+- storage account gen2 : life cycle management
+    - tiers
+    - life cycle management policies
+    - immutablity
+    - legal hold using tags
+- azure sql backup:
+    - PITR / Long Term
+    - temporal tables (too much)
 - azure sql edge : define data_retention_policy on database and table
 ```sql
 alter database [db1] set DATA_RETENTION ON;
@@ -71,13 +90,14 @@ WITH (
 )
 ```
 
-## design to purge data based on business requirements
+## [design to purge data based on business requirements](#data-purge)
 - storage account
     - life cycle management
     - immutablity
     - legal hold using tags
-
-## design Azure role-based access control (Azure RBAC) and POSIX-like Access Control List (ACL) for Data Lake Storage Gen2
+- azure sql db
+    -
+## [design Azure role-based access control (Azure RBAC) and POSIX-like Access Control List (ACL) for Data Lake Storage Gen2](#rabc-acl)
 
 - Reference 
     - [Access control model in Azure Data Lake Storage Gen2](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control-model)
@@ -119,9 +139,7 @@ WITH (
         - if default ACL is defined for parent. copies it to the new child
     - sticky bit : allows only the owner user to delete / rename files.
 
-
-
-## design row-level and column-level security
+## [design row-level and column-level security 🔒](#row-column-security)
 - azure synapse | azure sql db
     - row level security using predicte
         - create separate schema 
