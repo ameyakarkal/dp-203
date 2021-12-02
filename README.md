@@ -126,8 +126,9 @@ Manage batches and pipelines
 -  implement version control for pipeline artifacts
 -  manage Spark jobs in a pipeline
 
-# Design and Implement Data Security (10-15%)
-Design security for data policies and standards
+# Design and Implement Data Security 🔐 (10-15%)
+
+## Design security for data policies and standards
 - [x] [design data encryption for data at rest and in transit 🔐](docs/security/overview.md/#data-encryption)
 - [x] [design a data auditing strategy 📒](docs/security/overview.md/#data-audit)
 - [x] [design a data masking strategy 😷](docs/security/overview.md/#data-masking)
