@@ -50,14 +50,16 @@ Reference : https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-stora
 ## 1.3 recommend file types for analytical queries
     - raw : JSON / csv
     - non raw : parquet / databricks delta lake format
-## 1.4 design for efficient querying
+## 1.4 [design for efficient querying](#design-data-querying)
 Reference : https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-query-acceleration
+ - enable `Microsoft.Storage` provider. enable `Blob.Query` feature 
  - query acceleration, application can provide filter predicates and projection predicates
  - processors filter and stream out only the data that match the predicate, reducing transfer of unwanted data
  
-## 1.5 (design for data pruning)(#design-data-pruning)
+## 1.5 [design for data pruning](#design-data-pruning)
 - storage account gen2 : life cycle management
-- azure sql edge : define data_retention_policy on database and table
+- azure sql : point in time backup. point in time backup. Long term backup
+- azure sql : define data_retention_policy on database and table
 ```sql
 alter database [db1] set DATA_RETENTION ON;
 
@@ -103,7 +105,7 @@ WITH (
     - Auditing and masking of PII data : vertical
     - Improve write complexity of queries : bounded context : functional
     - Disaster recovery : horizontal : horizontal
-## 1.8 design a data archiving solution
+## 1.8 [design a data archiving solution](#design-data-archive)
 - Reference
     - [Blob life cycle management](https://docs.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview)
     - [archieve rehydrate overview](https://docs.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview)
@@ -120,4 +122,35 @@ WITH (
         - new blob is listed immediately however will not contain data
         - if source blob is deleted
 
-## Design 
+# Design a Partitioning Strategy
+Reference
+    - [docs: data partitioning](https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning)
+    - [docs](https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning-strategies)
+    - [azure synapse](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-tables-partition)
+## 2.1 design a partition strategy for files
+    - account name + container + blob key = partitioning
+    - account can delivery data in a single partition more effectively than data across partititons?
+    - container holds blobs with same security requirements
+    - single server responsible for a single blob. divide content 
+
+## 2.2 design a partition strategy for analytical workloads
+
+## 2.3 design a partition strategy for efficiency/performance
+
+- identity which entities will scale
+- identity nature of queries in the application
+
+## 2.4 design a partition strategy for Azure Synapse Analytics
+- Reference [youtube](https://www.youtube.com/watch?v=4SQouxsR7DQ)
+- partition can be applied on any type of table / distribution (hash/round-robin/reference)
+- insert :
+    - load data into staging table
+    - switch in and add partititon to the table (metadata operation)
+- delete :
+    - switch out partititon to staging table (metadata operation)
+    - delete/archieve data from staging table
+- range right (2007,2008,2009) <2007|2008|2009>=
+- range left  (2007,2008,2009) <=2007|2008|2009>
+- create partitions when there is no data.
+- create partitions when there is data
+## 2.5 identify when partitioning is needed in Azure Data Lake Storage Gen2
