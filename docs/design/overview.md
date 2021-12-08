@@ -55,7 +55,7 @@ Reference : https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-stora
  - query acceleration, application can provide filter predicates and projection predicates
  - processors filter and stream out only the data that match the predicate, reducing transfer of unwanted data
  
-## 1.5 design for data pruning
+## 1.5 (design for data pruning)(#design-data-pruning)
 - storage account gen2 : life cycle management
 - azure sql edge : define data_retention_policy on database and table
 ```sql
@@ -119,3 +119,5 @@ WITH (
     - copy blob to higher tier
         - new blob is listed immediately however will not contain data
         - if source blob is deleted
+
+## Design 

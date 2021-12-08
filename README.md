@@ -10,12 +10,12 @@ https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4MbYT
 
 # Design and Implement Data Storage (40-45%)
 
-[Design a data storage structure](docs/design/storage.md)
+[Design a data storage structure](docs/design/overview.md)
 - [x] design an Azure Data Lake solution
 - [x] recommend file types for storage
 - [x] recommend file types for analytical queries
 - [x] design for efficient querying
-- [x] design for data pruning
+- [x] design for data pruning(docs/design/overview.md#design-data-pruning)
 - [x] design a folder structure that represents the levels of data transformation
 - [x] design a distribution strategy
 - [x] design a data archiving solution
