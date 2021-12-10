@@ -4,7 +4,8 @@ Reference : https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-stora
 ## 1.1 design an Azure Data Lake solution
 
 - [x] performance : tier : hot | cold | archive
-- [x] replication 
+- [x] [replication](#design-data-redundancy) 
+    - Reference : [docs](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy)
     - LRS : three copies are created in ONE region under ONE zone (data center)
     - ZRS : three copies are created in ONE region across THREE zones (data centers)
     - GRS : 
@@ -79,7 +80,7 @@ WITH (
     - curated
     - sensitive
 
-## 1.7 design a distribution strategy
+## 1.7 [design a distribution strategy](#design-data-distribution)
 - Reference : [Design Principles for Partitioning with Azure](https://app.pluralsight.com/library/courses/design-principles-partitioning-azure/table-of-contents)
 - Partitioning
     - Key Concepts

@@ -1,5 +1,22 @@
 # Implement physical data storage structures
 
+## [implement data compresion](#implement-data-compress)
+- Reference : 
+    - [docs : Data Compression](https://docs.microsoft.com/en-us/sql/relational-databases/data-compression/data-compression?view=sql-server-ver15)
+    - [docs : Data Compression - how it affects storage](https://docs.microsoft.com/en-us/sql/relational-databases/data-compression/row-compression-implementation?view=sql-server-ver15)
+    - row compression :  when compressed, database engine chooses to store fixed len data types as variable len. e.g ; datetime stored as two int representing days from 1/1/1900
+    - page compression
+        - leaf pages : subjected to three types of compression in order
+            - row compression 
+            - prefix compression : 
+                - prefix entry made as a row
+                - for column value is replaced by reference to the prefix
+                - it also specifies if exact or partial match
+            - dictionary compression :
+        - non leaf pages
+            - subjected to row level compression
+        - it is triggered when data is added to the table and the page gets full. when new data is added to the  table and the row cannot fit onto the page after compression, a new page is created
+        - when compression is added to an existing table, each page is evaluated and rebuilt
 ## implement data archiving
 - azure sql : rentention
     - Reference : [docs](https://docs.microsoft.com/en-us/azure/azure-sql/database/long-term-retention-overview)
