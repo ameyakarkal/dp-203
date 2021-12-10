@@ -1,4 +1,5 @@
 # Azure Synapse
+Reference : https://www.youtube.com/channel/UCbEGP_wQd7VNC002upGt24g
 Reference : [Implement Datalakehouse with Azure Synapse](https://app.pluralsight.com/library/courses/building-first-data-lakehouse-azure-synapse-analytics/table-of-contents)
 Reference : [Implement Security on Azure Synapse](https://app.pluralsight.com/library/courses/implement-security-azure-synapse/table-of-contents)
 ## Concept

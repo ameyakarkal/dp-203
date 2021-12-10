@@ -10,15 +10,15 @@ https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4MbYT
 
 # Design and Implement Data Storage (40-45%)
 
-[Design a data storage structure](docs/design/storage.md)
+[Design a data storage structure](docs/design/overview.md)
 - [x] design an Azure Data Lake solution
 - [x] recommend file types for storage
 - [x] recommend file types for analytical queries
-- [x] design for efficient querying
-- [x] design for data pruning
+- [x] [design for efficient querying](docs/design/overview.md#design-data-querying) 🔎
+- [x] [design for data pruning](docs/design/overview.md#design-data-pruning) ❌ 
 - [x] design a folder structure that represents the levels of data transformation
-- [x] design a distribution strategy
-- [x] design a data archiving solution
+- [x] [design a distribution strategy](docs/design/overview.md#design-data-distribution)
+- [x] [design a data archiving solution](docs/design/overview.md#design-data-archive)
 
 Design a partition strategy
 - [ ] design a partition strategy for files
@@ -37,13 +37,13 @@ Design the serving layer
 -  design metastores in Azure Synapse Analytics and Azure Databricks
 
 Implement physical data storage structures
--  implement compression
--  implement partitioning
--  implement sharding
--  implement different table geometries with Azure Synapse Analytics pools
--  implement data redundancy
--  implement distributions
--  implement data archiving
+- [x] [implement compression](docs/design/implement.md#implement-data-compress) 🗜️
+- [x] implement partitioning [(refer to design distributions)](#docs/design/overview.md/design-data-distribution)
+- [ ] implement sharding
+- [ ] implement different table geometries with Azure Synapse Analytics pools
+- [x] [implement data redundancy (refer to design redundancy)](#docs/design/overview.md/design-data-redundancy)
+- [x] [implement distributions (refer to design distributions)](#docs/design/overview.md/design-data-distribution)
+- [x] [implement data archiving (refer to design partitioning)](#docs/design/overview.md/design-data-distribution)
 
 Implement logical data structures
 -  build a temporal data solution
