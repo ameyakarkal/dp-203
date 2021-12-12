@@ -27,8 +27,53 @@ Reference : [youtube](https://www.youtube.com/watch?v=32Jw0F5ojcU)
     - initialization scripts
         - global
         - cluster scoped
+    - node types (not given)
+        - on demand
+        - spot (node is terminated as soon as the task is complete, disk attached to the node are released as well)
 - notebooks
+    - mutliple code cells
+    - unlimited code cells
+    - cell
+        - single language
+        - versioned
+        - limit of 16 mb +  output
+    - dataframe to table
+    - dataframe to plots
+    - publish notebook to dashboards and share dashboard
+    - dashboard are not real time, set a schedule to refresh them
 - jobs
+    - jobs are non interactive compared to notebook
+    - artifact created : jobrun
+    - job cluster : 
+        - new cluster : isolated environment to run job tasks
+        - terminated cluster : any available cluster
+    - alerts :  notification when job starts/stops/fails/completes/skips
+    - tasks:
+        -libraries
+    - limits 
+        - 5000 per workspace per hour
+        - 1000 jobs concurrently
+        - maximum job output of 20 mb
+        - cell output limit of 8 mb
+    - configuration:
+        - manual : triggered by user
+        - scheduled : cron style setup
+        - task 
+            - work : pick notebook to be run
+            - cluster : create new cluster/pick existing cluster
+            - params : key/value pairs
+    - disk space
+        - local storage used by VM
+        - when exceeded local storage, managed disks are added to the VM
+        - 5TB limit
+    - streaming job
+        - limits
+            - no schedule
+            - unlimited retries
+            - single concurrent run
+        - watermarks : defines accepted time delay for event to be included in a window
+            - 1 min aggregate with 2 min watermark will include events that are 2 min delayed. the aggregate will be calculated every 2 minutes (instead of every minute)
+            - if two streams are joined the global watermark will be the highest (1 hr stream joined with 2 hr stream, the output stream will have a 2 hr watermark) 
 - data
     - can connect to azure services
     - it has a internal file system
