@@ -1,10 +1,32 @@
 # azure databricks
-
+Reference : [youtube](https://www.youtube.com/watch?v=32Jw0F5ojcU)
+- benefit
+    - rbac
 - workspace
+    - spark         : workflow
+    - sql analytics : post workflow serving layer for visualization
 - clusters
-    - all purpose
-    - job cluster
-    - 
+    - under the hood, its a managed cluster running apache spark.
+    - run notebooks, jobs.
+    - scheduler : 
+        - determines jobs access to cluster
+        - uses preemption
+        - threshold settings between 0-1.
+        - preemption timeout : time for which a job can starve for job before preemption
+        - interval : time interval between two checks done by schedule to check if a job needs resources
+    - types
+        - all purpose : manual start/stop/reused
+            - life cycle is independent of a job (notebook / job)
+        - job cluster : associated with a job
+            - deleted with the job
+        - single node cluster
+    - pool
+        - nodes available which can be added to a cluster
+        - cluster requests nodes from the pool, if not available will spin up new nodes
+        - nodes from the pool can be shared by cluster. reduces time to wait on nodes
+    - initialization scripts
+        - global
+        - cluster scoped
 - notebooks
 - jobs
 - data
