@@ -1,18 +1,22 @@
 # Azure Synapse
 Reference : https://www.youtube.com/channel/UCbEGP_wQd7VNC002upGt24g
-Reference : [Implement Datalakehouse with Azure Synapse](https://app.pluralsight.com/library/courses/building-first-data-lakehouse-azure-synapse-analytics/table-of-contents)
-Reference : [Implement Security on Azure Synapse](https://app.pluralsight.com/library/courses/implement-security-azure-synapse/table-of-contents)
+Reference : [Pluralsight : Implement Datalakehouse with Azure Synapse](https://app.pluralsight.com/library/courses/building-first-data-lakehouse-azure-synapse-analytics/table-of-contents)
+Reference : [Pluralsight : Implement Security on Azure Synapse](https://app.pluralsight.com/library/courses/implement-security-azure-synapse/table-of-contents)
 ## Concept
 - 2015 Azure Sql Datawarehouse
 - 2019 Azure Synapse Analytics
 - 2020 Azure Synapse Analytics
 ## Architecture
-
+- Reference
+    - main reference : [Pluralsight : Implement Datalakehouse with Azure Synapse](https://app.pluralsight.com/library/courses/building-first-data-lakehouse-azure-synapse-analytics/table-of-contents)
+    - additional reading : [Pluralsight : Data Literacy: Essentials of Azure Synapse Analytics](https://app.pluralsight.com/course-player?clipId=115bb506-79f6-4127-8f3c-5bf8b201ce50)
 - Storage
     - Azure datalake Gen2
+    - a default storage account is associated to azure synapse workspace. this could be a new storage account or existing one
 - Compute
     - Azure Dedicated SQL pool
     - Serverless SQL
+        - A default serverless pool is associated with workspace.
     - Apache Spark pool
 - Ingestion
     - Synapse pipleine

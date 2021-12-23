@@ -78,23 +78,23 @@ Design and develop a batch processing solution
 -  develop batch processing solutions by using Data Factory, Data Lake, Spark, Azure
 
 Synapse Pipelines, PolyBase, and Azure Databricks
--  create data pipelines
--  design and implement incremental data loads
--  design and develop slowly changing dimensions
--  handle security and compliance requirements
--  scale resources
--  configure the batch size
--  design and create tests for data pipelines
--  integrate Jupyter/Python notebooks into a data pipeline
--  handle duplicate data
--  handle missing data
--  handle late-arriving data
--  upsert data
--  regress to a previous state
--  design and configure exception handling
--  configure batch retention
--  design a batch processing solution
--  debug Spark jobs by using the Spark UI
+- [x] [create data pipelines](docs/processing/overview.md#create-data-pipeline)
+- [x] [design and implement incremental data loads](docs/processing/overview.md#incremental)
+- [x] [design and develop slowly changing dimensions](docs/proessing/overview.md#slowly-changing-dimension)
+- [ ] handle security and compliance requirements
+- [ ] scale resources
+- [ ] configure the batch size
+- [ ] design and create tests for data pipelines
+- [ ] integrate Jupyter/Python notebooks into a data pipeline
+- [ ] handle duplicate data
+- [ ] handle missing data
+- [ ] handle late-arriving data
+- [ ] upsert data
+- [ ] regress to a previous state
+- [ ] design and configure exception handling
+- [ ] configure batch retention
+- [ ] design a batch processing solution
+- [ ] debug Spark jobs by using the Spark UI
 
 Design and develop a stream processing solution
 -  develop a stream processing solution by using Stream Analytics, Azure Databricks, and
