@@ -21,6 +21,9 @@ https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4MbYT
 - [x] [design a data archiving solution](docs/design/overview.md#design-data-archive)
 
 Design a partition strategy
+
+optional : storage account architecture : https://sigops.org/s/conferences/sosp/2011/current/2011-Cascais/printable/11-calder.pdf
+
 - [ ] design a partition strategy for files
 - [ ] design a partition strategy for analytical workloads
 - [ ] design a partition strategy for efficiency/performance
