@@ -85,3 +85,17 @@ GROUP BY
 - window terminates if no new events are captured in 5 minutes
 - window terminates time span divisible by 10 (10,20,30)
 
+## Demo
+- define input 
+    - event hub
+    - iot
+    - blob
+- define output
+- define job queryer
+    - manual or scheduled
+    - defined number of rows generated / max timespan the job needs to run
+- monitoring
+    - watermark delay : time taken by event to be consumed and processed to be available at the destination
+- optimization
+    - use partitioning key for parallelization
+    - event hub specified partition is ideal 
