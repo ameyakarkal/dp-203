@@ -66,8 +66,8 @@ Ingest and transform data
 -  transform data by using Apache Spark
 -  transform data by using Transact-SQL
 -  transform data by using Data Factory
--  transform data by using Azure Synapse Pipelines
--  transform data by using Stream Analytics
+-  [transform data by using Azure Synapse Pipelines](docs/processing/azure-synapse.md)
+-  [transform data by using Stream Analytics](docs/processing/azure-stream-analytics.md)
 -  cleanse data
 -  split data
 -  shred JSON
