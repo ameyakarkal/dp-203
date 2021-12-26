@@ -9,7 +9,6 @@ Reference :
         - in a subscription
         - in a region
         - has a pricing tier
-
         - has one or more notebooks
         - data: has one or more tables
         - compute: has one or more clusters
@@ -17,7 +16,6 @@ Reference :
     - types
         - shared workspace
         - private workspace
-
     - spark         : workflow
     - sql analytics : post workflow serving layer for visualization
 - clusters
@@ -73,7 +71,7 @@ Reference :
     - artifact created : jobrun
     - job cluster : 
         - new cluster : isolated environment to run job tasks
-        - terminated cluster : any available cluster
+        - existing cluster
     - alerts :  notification when job starts/stops/fails/completes/skips
     - tasks:
         -libraries
@@ -104,3 +102,16 @@ Reference :
 - data
     - can connect to azure services
     - it has a internal file system
+    - mount account storage 
+
+```bash
+source="wasbs://<container_name>@<account_name>.blob.core.windows.net"
+mount_point="/mnt/<mount_name>"
+conf_key="fs.azure.account.key.<account_name>.blob.core.windows.net"
+key_name="<storage_account_shared_access_key>"
+
+
+# mount account storage using
+dbutils.fs.unmount(mount_point)
+dbutils.fs.mount(source = source, mount_point, extra_config = {conf_key:key_name})
+```

@@ -1,0 +1,49 @@
+<mxfile host="65bd71144e">
+    <diagram id="Sc1k66tIM_g0Jl0PF19m" name="Page-1">
+        <mxGraphModel dx="959" dy="540" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="cluster" style="whiteSpace=wrap;html=1;aspect=fixed;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="150" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="group;sketch=1;dashed=1;" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="20" y="370" width="140" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="cluster" style="whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="10">
+                    <mxGeometry width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&lt;span&gt;- type : interactive | job&lt;/span&gt;&lt;br&gt;&lt;span&gt;- timeout&lt;/span&gt;&lt;br&gt;&lt;span&gt;- auto scale&lt;br&gt;- min | max node count&lt;br&gt;- interactive&amp;nbsp;&lt;br&gt;&amp;nbsp; &amp;nbsp;- standard&amp;nbsp;&lt;br&gt;&amp;nbsp; &amp;nbsp;- multi&amp;nbsp;&lt;br&gt;- scheduler&lt;br&gt;- node types : driver | worker&lt;br&gt;- node pool : on demand | spot&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;align=left;horizontal=1;verticalAlign=top;sketch=1;" vertex="1" parent="10">
+                    <mxGeometry y="40" width="140" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="data / table" style="whiteSpace=wrap;html=1;aspect=fixed;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="150" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="notebook" style="whiteSpace=wrap;html=1;aspect=fixed;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="230" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="notebook" style="whiteSpace=wrap;html=1;aspect=fixed;sketch=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="230" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="group;sketch=1;dashed=1;" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="460" y="380" width="140" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="data" style="whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="14">
+                    <mxGeometry width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="&lt;span&gt;- define table&lt;br&gt;- mount azure storage&amp;nbsp;&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;align=left;horizontal=1;verticalAlign=top;sketch=1;" vertex="1" parent="14">
+                    <mxGeometry y="40" width="140" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="group;sketch=1;dashed=1;" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="230" y="370" width="140" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="job" style="whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="17">
+                    <mxGeometry width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="&lt;span&gt;- schedule&lt;br&gt;- broken into tasks&lt;br&gt;&lt;/span&gt;&lt;span&gt;- limits : 5000 jobs per workspace per hour | 1000 concurrent jobs&lt;br&gt;- data limits : 20 mb output per cell&lt;br&gt;- disk : handled at local VM, managed disks added to handle 5 TB&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;align=left;horizontal=1;verticalAlign=top;sketch=1;" vertex="1" parent="17">
+                    <mxGeometry y="40" width="140" height="190" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
