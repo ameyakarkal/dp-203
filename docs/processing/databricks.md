@@ -1,25 +1,52 @@
-# azure databricks
-Reference : [youtube](https://www.youtube.com/watch?v=32Jw0F5ojcU)
+ # azure databricks
+Reference : 
+- [youtube](https://www.youtube.com/watch?v=32Jw0F5ojcU)
+- [youtube](https://youtu.be/igNxBi3tfWk?list=PL7ZG6NdDdT8NRHDU5shVgGjlua297bm-H)
 - benefit
     - rbac
-- workspace
+- workspace 
+    - concept
+        - in a subscription
+        - in a region
+        - has a pricing tier
+
+        - has one or more notebooks
+        - data: has one or more tables
+        - compute: has one or more clusters
+        - has one or more jobs
+    - types
+        - shared workspace
+        - private workspace
+
     - spark         : workflow
     - sql analytics : post workflow serving layer for visualization
 - clusters
     - under the hood, its a managed cluster running apache spark.
     - run notebooks, jobs.
+    - max timeout
+    - auto scale with min and max node counts
+    - consists of two types of nodes
+        - driver (jobmanager for flink)
+        - worker (taskmanager for flink)
+    - types
+        - interactive: 
+            - manual start/stop/reused
+            - life cycle is independent of a job (notebook / job)
+            - auto pause
+            -  no 
+            - types
+                - standard mode : single user, no fault toleration, not fair sharing 
+                - high concurrency mode : multi user, fault toleration, limited support for languages, fair sharing
+        - job cluster : associated with a job
+            - deleted with the job
+        - single node cluster
     - scheduler : 
         - determines jobs access to cluster
         - uses preemption
         - threshold settings between 0-1.
         - preemption timeout : time for which a job can starve for job before preemption
         - interval : time interval between two checks done by schedule to check if a job needs resources
-    - types
-        - all purpose : manual start/stop/reused
-            - life cycle is independent of a job (notebook / job)
-        - job cluster : associated with a job
-            - deleted with the job
-        - single node cluster
+
     - pool
         - nodes available which can be added to a cluster
         - cluster requests nodes from the pool, if not available will spin up new nodes
