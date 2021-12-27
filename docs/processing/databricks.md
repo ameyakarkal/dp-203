@@ -118,5 +118,10 @@ dbutils.fs.mount(source = source, mount_point, extra_config = {conf_key:key_name
 ```
 
 - transform
-  - narrow : when each partition contributes to a single output partition (union)
-  - wide : each partition contributes to more than one output partition | needs shuffling | slow |  (join / group by)
+    - narrow : when each partition contributes to a single output partition (union)
+    - wide : each partition contributes to more than one output partition | needs shuffling | slow |  (join / group by)
+- table
+    - global : available across | temp table : available for current notebook
+    - createOrReplaceTempView : creates a temporary table
+    - .write.saveAsTable : creates global table
+    - 
