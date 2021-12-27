@@ -55,6 +55,7 @@ Reference :
     - node types (not given)
         - on demand
         - spot (node is terminated as soon as the task is complete, disk attached to the node are released as well)
+    - libraries : import libraries allows to import existing libraries and make them available on each node 
 - notebooks
     - mutliple code cells
     - unlimited code cells
@@ -115,3 +116,12 @@ key_name="<storage_account_shared_access_key>"
 dbutils.fs.unmount(mount_point)
 dbutils.fs.mount(source = source, mount_point, extra_config = {conf_key:key_name})
 ```
+
+- transform
+    - narrow : when each partition contributes to a single output partition (union)
+    - wide : each partition contributes to more than one output partition | needs shuffling | slow |  (join / group by)
+- table
+    - global : available across | temp table : available for current notebook
+    - createOrReplaceTempView : creates a temporary table
+    - .write.saveAsTable : creates global table
+    - 
