@@ -81,7 +81,18 @@ WITH (
     - sensitive
 
 ## 1.7 [design a distribution strategy](#design-data-distribution)
+- Distribution
+    - Storage Account 
+        - geography
+        - performance : three digit hash followed by combination of account-name, container-name, blob name
+        - temporal : yyyy/mm/dd/xx        
+    - Synapse
+        - round robin
+        - hash
+        - reference
+
 - Reference : [Design Principles for Partitioning with Azure](https://app.pluralsight.com/library/courses/design-principles-partitioning-azure/table-of-contents)
+
 - Partitioning
     - Key Concepts
         - performance
