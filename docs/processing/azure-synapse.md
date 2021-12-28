@@ -120,3 +120,16 @@ Reference : [Pluralsight : Implement Security on Azure Synapse](https://app.plur
     - grant select access on tvf for the user
 - column level security : grant access to the user
     - user gets error when projecting columns that don't fall in the grant scope
+
+
+---
+## Deep Dive
+[yuotube play list : https://www.youtube.com/c/ArshadAliAasTrailblazers/videos](https://www.youtube.com/c/ArshadAliAasTrailblazers/videos)
+- Partitioning
+- Distribution
+- Index
+    - heap : best for fast insert
+    - column store : 
+        data->row group (1 million rows) -> column -> column segment -> (compression) -> column store
+    - clustered index : specified with a column to be used for clustered index
+    - non clustered index : created on top of heap / clustered index table
