@@ -11,23 +11,23 @@ https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4MbYT
 # Design and Implement Data Storage (40-45%)
 
 [Design a data storage structure](docs/design/overview.md)
-- [x] design an Azure Data Lake solution
+- [x] [design an Azure Data Lake solution](docs/design/overview.md#design)
 - [x] recommend file types for storage
 - [x] recommend file types for analytical queries
 - [x] [design for efficient querying](docs/design/overview.md#design-data-querying) 🔎
 - [x] [design for data pruning](docs/design/overview.md#design-data-pruning) ❌ 
-- [x] design a folder structure that represents the levels of data transformation
+- [x] [design a folder structure that represents the levels of data transformation](docs/design/overview.md#folder)
 - [x] [design a distribution strategy](docs/design/overview.md#design-data-distribution)
 - [x] [design a data archiving solution](docs/design/overview.md#design-data-archive)
 
-Design a partition strategy
+[Design a partition strategy](docs/design/overview/#partitioning)
 
 optional : storage account architecture : https://sigops.org/s/conferences/sosp/2011/current/2011-Cascais/printable/11-calder.pdf
 
-- [ ] design a partition strategy for files
+- [ ] [design a partition strategy for files](docs/design/overview/#partitioning-storage-account)
 - [ ] design a partition strategy for analytical workloads
 - [ ] design a partition strategy for efficiency/performance
-- [ ] design a partition strategy for Azure Synapse Analytics
+- [ ] [design a partition strategy for Azure Synapse Analytics](docs/design/overview/#partitioning-synapse)
 - [ ] identify when partitioning is needed in Azure Data Lake Storage Gen2
 
 Design the serving layer

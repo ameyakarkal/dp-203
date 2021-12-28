@@ -120,3 +120,7 @@ Reference : [Pluralsight : Implement Security on Azure Synapse](https://app.plur
     - grant select access on tvf for the user
 - column level security : grant access to the user
     - user gets error when projecting columns that don't fall in the grant scope
+
+
+## Tables
+- 

@@ -1,7 +1,7 @@
 # 1. Design a data storage structure
 Reference : https://www.youtube.com/playlist?list=PL-oeM7CaGtVjRgNJ5oy9xbrpcOYr3RhZG
 Reference : https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-best-practices
-## 1.1 design an Azure Data Lake solution
+## 1.1 [design an Azure Data Lake solution](#design)
 
 - [x] performance : tier : hot | cold | archive
 - [x] [replication](#design-data-redundancy) 
@@ -73,7 +73,7 @@ WITH (
     DATA_RETENTION = ON (FILTER_COLUMN = CreatedOn, RETENTION_PERIOD =1 DAY)
 )
 ```
-## 1.6 design a folder structure that represents the levels of data transformation
+## [1.6 design a folder structure that represents the levels of data transformation](#folder)
     - raw
     - cleaned
     - lab
@@ -123,12 +123,12 @@ WITH (
         - new blob is listed immediately however will not contain data
         - if source blob is deleted
 
-# Design a Partitioning Strategy
+# [Design a Partitioning Strategy](#partitioning)
 Reference
     - [docs: data partitioning](https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning)
     - [docs](https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning-strategies)
     - [azure synapse](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-tables-partition)
-## 2.1 design a partition strategy for files
+## [2.1 design a partition strategy for files](#partitioning-storage-account)
     - account name + container + blob key = partitioning
     - account can delivery data in a single partition more effectively than data across partititons?
     - container holds blobs with same security requirements
@@ -141,7 +141,7 @@ Reference
 - identity which entities will scale
 - identity nature of queries in the application
 
-## 2.4 design a partition strategy for Azure Synapse Analytics
+## 2.4 [design a partition strategy for Azure Synapse Analytics](#partitioning-synapse)
 - Reference [youtube](https://www.youtube.com/watch?v=4SQouxsR7DQ)
 - partition can be applied on any type of table / distribution (hash/round-robin/reference)
 - insert :
@@ -155,3 +155,5 @@ Reference
 - create partitions when there is no data.
 - create partitions when there is data
 ## 2.5 identify when partitioning is needed in Azure Data Lake Storage Gen2
+??
+
