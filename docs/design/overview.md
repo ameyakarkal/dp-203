@@ -24,7 +24,27 @@ Reference : https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-stora
         - silver    : json, csv
         - gold      : parquet, delta-lake
 
-## 1.2 recommend file types for storage
+## 1.2 [recommend file types for storage](#file-type)
+Reference :
+    - [slide-share](https://www.slideshare.net/StampedeCon/choosing-an-hdfs-data-storage-format-avro-vs-parquet-and-more-stampedecon-2015)
+**file types**
+- text / csv
+    - no compression
+    - easy to generate
+- avro
+    - row based
+    - schema is part of the file
+    - block compression
+    - supports schema evolution (add/update/remove columns)
+    - better for write performance
+- parquet
+    - column based
+    - better tools to handle compression / encoding
+    - indexed data
+    - support schema evolution (add columns better than others)
+    - better for read performance
+
+**type of storage**
     - relational
         - azure sql db
         - postgres

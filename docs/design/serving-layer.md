@@ -4,7 +4,7 @@
 - hierarchy : levels of data formed
 
 
-## serving using parquet
+## [serving using parquet](#parquet)
 - Reference : [youtube: parquet](https://www.youtube.com/watch?v=1j8SdS7s_NY&list=RDCMUC3q8O3Bh2Le8Rj1-Q-_UUbA&index=8)
 - row-wise      : good for OLTP : rows are stored back to back
 - column-wise   : good for OLAP : columns are stored back to back

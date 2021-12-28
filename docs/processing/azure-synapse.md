@@ -94,6 +94,12 @@ Reference : [Pluralsight : Implement Security on Azure Synapse](https://app.plur
     - external tables : datasource, datasource scoped credential, file format, schema
     - openrowset
 
+## [Running Notebook in Pipeline](#notebook-in-pipeline)
+- Reference : 
+    - [youtube](https://www.youtube.com/watch?v=89m1VOXXnHM)
+    - [youtube : parameters](https://www.youtube.com/watch?v=t5myJYV__Jo)
+        - parameter cell.
+        - data factory / synapse pipeline overwrites the parameter values
 
 # Security
 ## Encryption

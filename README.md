@@ -5,14 +5,14 @@
 - Monitor and optimize data storage and data processing (10-15%)
 
 ## Reference 
-https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4MbYT
-
+- https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4MbYT
+- [exam overview](https://www.youtube.com/watch?v=-FUMomndiLo&t=20s)
 
 # Design and Implement Data Storage (40-45%)
 
 [Design a data storage structure](docs/design/overview.md)
 - [x] [design an Azure Data Lake solution](docs/design/overview.md#design)
-- [x] recommend file types for storage
+- [x] [recommend file types for storage](docs/design/overview.md#filetype)
 - [x] recommend file types for analytical queries
 - [x] [design for efficient querying](docs/design/overview.md#design-data-querying) 🔎
 - [x] [design for data pruning](docs/design/overview.md#design-data-pruning) ❌ 
@@ -57,7 +57,7 @@ Implement logical data structures
 
 Implement the serving layer
 -  deliver data in a relational star schema
--  deliver data in Parquet files
+-  [deliver data in Parquet files](docs/serving-layer.md#parquet)
 -  maintain metadata
 -  implement a dimensional hierarchy
 
@@ -88,8 +88,8 @@ Synapse Pipelines, PolyBase, and Azure Databricks
 - [ ] scale resources
 - [ ] configure the batch size
 - [ ] design and create tests for data pipelines
-- [ ] integrate Jupyter/Python notebooks into a data pipeline
-- [ ] handle duplicate data
+- [ ] [integrate Jupyter/Python notebooks into a data pipeline](docs/processing/synapse.md#notebook-in-pipeline)
+- [ ] [handle duplicate data](docs/processing/synapse.md#)
 - [ ] handle missing data
 - [ ] handle late-arriving data
 - [ ] upsert data
@@ -171,10 +171,10 @@ Manage batches and pipelines
 ## Optimize and troubleshoot data storage and data processing
 -  compact small files
 -  rewrite user-defined functions (UDFs)
--  [handle skew in data]
+-  [handle skew in data](docs/monitor/optimize.md#skew)
 -  handle data spill
 -  tune shuffle partitions
--  find shuffling in a pipeline
+-  [find shuffling in a pipeline](docs/monitor/optimize.md#find-shuffle)
 -  optimize resource management
 -  tune queries by using indexers
 -  tune queries by using cache
