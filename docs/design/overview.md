@@ -81,6 +81,8 @@ WITH (
     - sensitive
 
 ## 1.7 [design a distribution strategy](#design-data-distribution)
+- Reference 
+    - [yuotube : distribution strategy for azure synapse](https://www.youtube.com/watch?v=CLQ7O_uiIhs)
 - Distribution
     - Storage Account 
         - geography
@@ -88,8 +90,12 @@ WITH (
         - temporal : yyyy/mm/dd/xx        
     - Synapse
         - round robin
+            - temporary staging table
+            - no obvious joining key    
         - hash
-        - reference
+            - avoid column that is used in where clause. this makes the query narrow and reduces number of distributions that are hit. more distributions hit = more parallelism
+        - replicated
+            - small tables
 
 - Reference : [Design Principles for Partitioning with Azure](https://app.pluralsight.com/library/courses/design-principles-partitioning-azure/table-of-contents)
 
@@ -121,18 +127,30 @@ WITH (
 - Reference
     - [Blob life cycle management](https://docs.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview)
     - [archieve rehydrate overview](https://docs.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview)
-
-- Rehydrate 
-    - you can set priority
-        - standard : upto 15 hours
-        - high : < 1hr for < 10gb
-        - can upgrade priority while rehydration is pending
-    - `SetBlobTier`
-        - use when life cycle policies are not defined
-        - does not alter lastModified date
-    - copy blob to higher tier
-        - new blob is listed immediately however will not contain data
-        - if source blob is deleted
+- Storage Account
+    - Rehydrate 
+        - you can set priority
+            - standard : upto 15 hours
+            - high : < 1hr for < 10gb
+            - can upgrade priority while rehydration is pending
+        - `SetBlobTier`
+            - use when life cycle policies are not defined
+            - does not alter lastModified date
+        - copy blob to higher tier
+            - new blob is listed immediately however will not contain data
+            - if source blob is deleted
+- Azure Synapse
+    - Archive using partitioning
+```sql
+/* create a destination for partititon */
+CREATE TABLE dbo.Sales_Archive WITH 
+(
+    ... 
+    , PARTITION ([DateKey] RANGE RIGHT FOR VALUES ('2010-01-01'))
+)
+/* alter source table to swap the partition */
+ALTER TABLE dbo.Sales SWITCH PARTITION 2 TO dbo.Sales_Archive PARTITION 2
+```
 
 # [Design a Partitioning Strategy](#partitioning)
 Reference
@@ -145,26 +163,90 @@ Reference
     - container holds blobs with same security requirements
     - single server responsible for a single blob. divide content 
 
-## 2.2 design a partition strategy for analytical workloads
+## 2.2 [design a partition strategy for analytical workloads](#partitioning-synapse)
+```sql
+/* create source table with partitioning */
+CREATE TABLE dbo.Sales_ WITH 
+(
+    ... 
+    , PARTITION ([DateKey] RANGE RIGHT FOR VALUES ('2010-01-01', '2011-01-01', '2012-01-01'))
+)
+AS 
+SELECT * FROM external_table.Sales
+/* create a destination for partititon */
+CREATE TABLE dbo.Sales_Archive WITH 
+(
+    ... 
+    , PARTITION ([DateKey] RANGE RIGHT FOR VALUES ('2010-01-01'))
+)
+/* alter source table to swap the partition */
+ALTER TABLE dbo.Sales SWITCH PARTITION 2 TO dbo.Sales_Archive PARTITION 2
+```
 
-## 2.3 design a partition strategy for efficiency/performance
-
-- identity which entities will scale
-- identity nature of queries in the application
+## [2.3 design a partition strategy for efficiency/performance](#partitioning-performance)
+- Generic : Storage Account / Synapse
+    - identity which entities will scale
+    - identity nature of queries in the application
 
 ## 2.4 [design a partition strategy for Azure Synapse Analytics](#partitioning-synapse)
 - Reference [youtube](https://www.youtube.com/watch?v=4SQouxsR7DQ)
 - partition can be applied on any type of table / distribution (hash/round-robin/reference)
-- insert :
-    - load data into staging table
-    - switch in and add partititon to the table (metadata operation)
-- delete :
+
+```sql
+
+/*
+NO DATA IN PARTITION : ADDING 2012
+- FACT table has 2010/2011 partition
+- EXTERNAL table has 2012
+- create STAGING table with partitions 2010,2011,2012. load into STAGING
+- SWITCH PARTITIONS
+*/
+
+
+/* create staging table */
+CREATE EXTERNAL TABLE external_table.FactTransactions 
+
+/* create a destination for partititon */
+CREATE TABLE dbo.FactTransactions WITH 
+(
+    ... 
+    , PARTITION ([DateKey] RANGE RIGHT FOR VALUES ('2010-01-01', '2011-01-01'))
+)
+
+/* insert into staging */
+CREATE TABLE staging.FactTransactions WITH 
+(
+    ... 
+    , PARTITION ([DateKey] RANGE RIGHT FOR VALUES ('2010-01-01', '2011-01-01', '2012-01-01'))
+)
+AS SELECT * FROM external_table.FactTransactions
+
+/* swap the partition */
+ALTER TABLE staging.FactTransactions SWITCH PARTITION 2 TO dbo.FactTransactions PARTITION 2
+```
+
+- INSERT :
+    - STAGE
+        - create staging table with same partitions as original table
+        - insert into staging tale 
+        - switch in and add partititon to the table (metadata operation)
+    - create partitions when there is no data.
+    - create partitions when there is data (UNION ALL data from staging and dbo table into staging table. delete partition in dbo, create partition from staging)
+- DELETE :
     - switch out partititon to staging table (metadata operation)
-    - delete/archieve data from staging table
-- range right (2007,2008,2009) <2007|2008|2009>=
-- range left  (2007,2008,2009) <=2007|2008|2009>
-- create partitions when there is no data.
-- create partitions when there is data
+- ARCHIVE: 
+    - data from staging table
+    - range right (2007,2008,2009) <2007|2008|2009>=
+    - range left  (2007,2008,2009) <=2007|2008|2009>
+
+
+
+
+
+
+
+
+
 ## 2.5 identify when partitioning is needed in Azure Data Lake Storage Gen2
 ??
 

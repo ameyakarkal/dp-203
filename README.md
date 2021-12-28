@@ -25,8 +25,8 @@ https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4MbYT
 optional : storage account architecture : https://sigops.org/s/conferences/sosp/2011/current/2011-Cascais/printable/11-calder.pdf
 
 - [ ] [design a partition strategy for files](docs/design/overview/#partitioning-storage-account)
-- [ ] design a partition strategy for analytical workloads
-- [ ] design a partition strategy for efficiency/performance
+- [ ] [design a partition strategy for analytical workloads](docs/design/overview/#partitioning-synapse)
+- [ ] [design a partition strategy for efficiency/performance : same as analytics workload](docs/design/overview/#partitioning-performance)
 - [ ] [design a partition strategy for Azure Synapse Analytics](docs/design/overview/#partitioning-synapse)
 - [ ] identify when partitioning is needed in Azure Data Lake Storage Gen2
 
