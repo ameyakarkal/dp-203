@@ -163,15 +163,15 @@ Manage batches and pipelines
 -  monitor and update statistics about data across a system
 -  monitor data pipeline performance
 -  measure query performance
--  monitor cluster performance
+-  [monitor cluster performance]
 -  understand custom logging options
 -  schedule and monitor pipeline tests
--  interpret Azure Monitor metrics and logs
--  interpret a Spark directed acyclic graph (DAG)
+-  [interpret Azure Monitor metrics and logs](#noop)
+-  [interpret a Spark directed acyclic graph (DAG)](https://www.youtube.com/watch?v=LoFN_Q224fQ)
 ## Optimize and troubleshoot data storage and data processing
 -  compact small files
 -  rewrite user-defined functions (UDFs)
--  handle skew in data
+-  [handle skew in data]
 -  handle data spill
 -  tune shuffle partitions
 -  find shuffling in a pipeline
