@@ -66,6 +66,7 @@ GROUP BY
 ```
 - depends on the event that was captured
 - overlap may or may not occur
+- alerts when event enters or exists the window
 - goes back 10 seconds from each event that is captured
 
 ### session

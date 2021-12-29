@@ -127,7 +127,26 @@ Reference : [Pluralsight : Implement Security on Azure Synapse](https://app.plur
 - column level security : grant access to the user
     - user gets error when projecting columns that don't fall in the grant scope
 
+## [Monitoring using DMV](#monitoring-dvm)
+- Reference 
+    - [docs](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-manage-monitor)
 
+- `dm_pdw_exec_sessions` : active sessions | session_id() gives the current session
+- `dm_pdw_exec_requests` : queries that are run. `total_elaspsed_time` | run query with `OPTION (LABEL='My Label')`
+- `dm_pdw_request_steps` : query plan
+- `dm_pdw_dms_workers`   : find how data is moving | find which distribution is causing waits
+- `dm_pdw_waits`         : joins with `dm_pdw_requests` | find which request is waiting for a specific resource
+- monitor tempdb         : 
+    - failure in CTAS / INSERT SELECT can cause tempdb to build. this is used to save intermediate results
+    - involves querying `nodes_exec_sessions` `nodes_exec_requests` and `nodes_sessions_space_usage` 
+- monitor memory         :
+    - needs to be calculated at the node level
+    - node_os_performance_counters
+- transaction log
+    - log size : `node_os_performance_counters`
+    - rollback :  `node_tran_database_transactions`
+- polybase memory usage
+    - `pdw_dms_external_work` 
 ---
 ## Deep Dive
 [yuotube play list : https://www.youtube.com/c/ArshadAliAasTrailblazers/videos](https://www.youtube.com/c/ArshadAliAasTrailblazers/videos)
@@ -139,3 +158,28 @@ Reference : [Pluralsight : Implement Security on Azure Synapse](https://app.plur
         data->row group (1 million rows) -> column -> column segment -> (compression) -> column store
     - clustered index : specified with a column to be used for clustered index
     - non clustered index : created on top of heap / clustered index table
+
+
+## External table
+- create credentials
+    - identity
+        - SHARED ACCESS SIGNATURE
+        - MANAGED IDENTITY
+```sql
+
+
+CREATE DATABASE SCOPED CREDENTIAL blobUser
+WITH
+    IDENTITY='identity',
+    SECRET =  'SHA'
+```
+
+- create datasource
+    - 
+```sql  
+CREATE EXTERNAL DATASOURCE core_data
+WITH 
+    (
+        LOCATION = 'prefix://path'
+    )
+```
